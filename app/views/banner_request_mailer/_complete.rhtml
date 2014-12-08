@@ -1,0 +1,18 @@
+
+The request to <%= @ticket.task.description.chop %> has been completed:
+
+ 
+  UH Username: <%= @user.uid %>
+  Full Name: <%= @user.display_name %>
+  Email: <%= @user.email %>
+  
+General Comments:
+  <%= @ticket.description -%>
+  
+<% if @ticket.permissions %>
+Permission Comments:
+  <%= @ticket.permissions %>
+<% end -%>
+
+
+Thank you!

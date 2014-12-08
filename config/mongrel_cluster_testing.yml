@@ -1,0 +1,9 @@
+--- 
+cwd: /Users/fduckart/tmp/bars4uh/current
+log_file: log/mongrel.log
+port: "3000"
+environment: testing
+#address: 127.0.0.1
+address: ogas.its.hawaii.edu
+pid_file: tmp/pids/mongrel.pid
+servers: 2

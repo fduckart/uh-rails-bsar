@@ -1,0 +1,2 @@
+class BaseTicketController < ApplicationController
+end

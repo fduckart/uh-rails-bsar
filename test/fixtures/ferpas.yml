@@ -1,0 +1,23 @@
+f1:
+  id: 1
+  user_id: 6
+  ferpa_sent_date: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  ferpa_sent_count:
+  ferpa_action_date:
+  ferpa_is_approved:
+
+f2:
+  id: 2
+  user_id: 2
+  ferpa_sent_date: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  ferpa_sent_count:
+  ferpa_action_date:
+  ferpa_is_approved:
+
+f3:
+  id: 3
+  user_id: 3
+  ferpa_sent_date: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  ferpa_sent_count:
+  ferpa_action_date:
+  ferpa_is_approved:

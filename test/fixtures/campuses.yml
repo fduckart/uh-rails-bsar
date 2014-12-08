@@ -1,0 +1,49 @@
+manoa:
+  id: 1
+  code: MAN
+  description: Manoa
+  
+hawaii:
+  id: 2
+  code: HAW
+  description: Hawaii
+
+hilo:
+  id: 3
+  code: HIL
+  description: Hilo
+
+honolulu:
+  id: 4
+  code: HON
+  description: Honolulu
+
+kapiolani:
+  id: 5
+  code: KAP
+  description: Kapiolani
+
+kauai:
+  id: 6
+  code: KAU
+  description: Kauai
+
+leeward:
+  id: 7
+  code: LEE
+  description: Leeward
+
+maui:
+  id: 8
+  code: MAU
+  description: Maui
+
+windward:
+  id: 9
+  code: WIN
+  description: Windward
+
+west_oahu:
+  id: 10
+  code: WOA
+  description: West Oahu

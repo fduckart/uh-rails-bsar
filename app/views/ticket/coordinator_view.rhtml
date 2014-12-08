@@ -1,0 +1,145 @@
+<h1>Coordinator Welcome</h1>
+It's <%= Time.now %>.
+<br/>
+<br/>
+<div class="app-lookup-form">
+  <fieldset>
+    <legend>Lookup</legend>
+    <% form_tag 'coordinator_view' do %>
+      <p>
+        <%= radio_button_tag :type, :uid, checked = true %>&nbsp;username&nbsp;
+        <%= radio_button_tag :type, :uhuuid %>&nbsp;ID&nbsp;
+        <%= text_field_tag :value, params[:value], "maxlength" => 20 %>
+        <%= submit_tag 'Lookup' %>
+      </p>
+    <% end %>
+    <p>
+      <% if @my_person %>
+        firstname: <%= @my_person.firstname %><br/>
+        lastname: <%= @my_person.lastname %><br/>
+        uid: <%= @my_person.uid %><br/>
+        uhuuid: <%= @my_person.uhuuid %><br/>
+      <% end %>
+    </p>
+  </fieldset>
+</div>
+<br/>
+
+<% if @pending_tickets.size > 0 %>
+<div id="ticket-list">
+  <h2 class="h2">Pending Requests</h2>
+  <table cellpadding="5" cellspacing="0" border="1">
+    <tr>
+      <th>State</th>
+      <th>User</th>
+      <th>Last&nbsp;Action</th>
+      <th>Description</th>
+      <th>&nbsp;</th>
+    </tr>
+    
+    <% for ticket in @pending_tickets %>
+      <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td>
+          <span class="list-state"><%= h(ticket.state) %></span><br/>
+        </td>
+        <td>
+          &nbsp;<%= ticket.username %>
+        </td>
+        <td>
+            <%= h(truncate(ticket.last_action, 80)) %>
+        </td>
+        <td width="70%">
+            <%= h(truncate(ticket.description, 80)) %>
+        </td>
+        <td class="list-actions" width="20%">
+          <%= link_to 'Edit', :action => 'edit', :id => ticket %><br/>
+          <%= link_to 'Delete', { :action  => 'destroy', :id => ticket, },
+                                :confirm => "Are you sure?",
+                                :method  => :post
+                            %><br/>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<br/>
+<br/>
+<% end %>
+
+<% if @new_tickets.size > 0 %>
+<div id="ticket-list">
+  <h2 class="h2">'New' Requests</h2>
+  <table cellpadding="5" cellspacing="0" border="1">
+    <tr>
+      <th>State</th>
+      <th>User</th>
+      <th>Last&nbsp;Action</th>
+      <th>Description</th>
+      <th>&nbsp;</th>
+    </tr>
+    <% for new_ticket in @new_tickets %>
+      <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td>
+          <span class="list-state"><%= h(new_ticket.state) %></span><br/>
+        </td>
+        <td>
+          &nbsp;<%= new_ticket.username %>
+        </td>
+        <td>
+            <%= h(truncate(new_ticket.last_action, 80)) %>
+        </td>
+        <td width="70%">
+            <%= h(truncate(new_ticket.description, 80)) %>
+        </td>
+        <td class="list-actions" width="20%">
+          <%= link_to 'Delete', {:action  => 'destroy', :id => new_ticket, },
+                                :confirm => "Are you sure?",
+                                :method  => :post
+                            %><br/>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<br/>
+<br/>
+<% end %>
+
+We have <%= pluralize(@total_tickets, "ticket") %>.
+<br/>
+
+<div id="ticket-list">
+  <h2 class="h2">All Requests</h2>
+  <table cellpadding="5" cellspacing="0" border="1">
+    <tr>
+      <th>State</th>
+      <th>User</th>
+      <th>Last&nbsp;Action</th>
+      <th>Description</th>
+      <th>&nbsp;</th>
+    </tr>
+    <% for ticket in @tickets %>
+      <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td>
+          <span class="list-state"><%= h(ticket.state) %></span><br/>
+        </td>
+        <td>
+          &nbsp;<%= ticket.username %>
+        </td>
+        <td>
+            <%= h(truncate(ticket.last_action, 80)) %>
+        </td>
+        <td width="70%">
+            <%= h(truncate(ticket.description, 80)) %>
+        </td>
+        <td class="list-actions" width="20%">
+          <%= link_to 'Edit', :action => 'edit', :id => ticket %><br/>
+          <%= link_to 'Delete', { :action  => 'destroy', :id => ticket, },
+                                :confirm => "Are you sure?",
+                                :method  => :post
+                            %><br/>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

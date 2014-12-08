@@ -1,0 +1,8 @@
+--- 
+cwd: /var/home/duckart/bars4uh/current
+log_file: log/mongrel.log
+port: "3000"
+environment: staging
+address: its99.pvt.hawaii.edu
+pid_file: tmp/pids/mongrel.pid
+servers: 1

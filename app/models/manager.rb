@@ -1,0 +1,1 @@
+class Manager < Role ; end

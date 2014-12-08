@@ -1,0 +1,13 @@
+  
+<table cellpadding="2" cellspacing="2" border="0" width="80%">
+	<tr>
+    	<td width="40%" valign="top">
+        	<label for="tasks_complete">Completed tasks:</label>
+        </td>
+        <td>
+           	<%= form.radio_button(:close_task_id, 4) %>Removed from Banner <br />
+           	<%= form.radio_button(:close_task_id, 5) %>Disabled in Banner<br/>
+           	<%= form.check_box(:is_listserv_done) %>Removed from LISTSERV<br/>
+        </td>
+    </tr>
+</table>

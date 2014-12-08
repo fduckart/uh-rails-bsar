@@ -1,0 +1,57 @@
+
+<% if @system_users %>
+  <% prompt = "Are you sure you want to delete" %>
+  
+  <fieldset>
+    <legend>Administrators</legend>
+    
+<div id="ticket-list">
+    
+  <table cellpadding="2" cellspacing="2" border="0">
+    <tr>
+      <th><label for="user_uid">UH Username</label></th>
+      <th><label for="user_role">Application Role</label></th>
+      <th><label for="user_delete">Delete?</label></th>
+    </tr>
+      
+    <% for user in @system_users %>
+      <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td>
+          <span class="list-state">
+            <%= h(user.username) %>
+          </span>
+        </td>
+        <td>
+          <%=  h(user.role.name) %>
+        </td>
+        <td class="list-actions" width="20%">
+          <%= link_to "[X]", { # link_to options
+                               :controller => 'login',
+                               :action => 'delete_user',
+                               :id => user
+                             },
+                             { # html options
+                               :method => :post,
+                               :confirm => prompt + " '#{user.username}'?"
+                             } %> 
+        </td>
+      </tr>
+    <% end %> 
+
+  </table>
+</div>
+  </fieldset>
+<% end %>
+
+
+
+
+
+
+
+
+<br/><br/>
+<%= link_to 'Add User', {:controller => 'login', :action => 'add_user'} %>
+
+
+                       

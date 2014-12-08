@@ -1,0 +1,36 @@
+new_account:
+  id: 1
+  name: New Account
+  description: Create a new Banner account for a user.
+  nature: primary
+  
+terminate_account:
+  id: 2
+  name: Terminate Account
+  description: Remove existing Banner access for user.
+  nature: primary
+  
+reset_password:
+  id: 3
+  name: Reset Password
+  description: Reset user password for a Banner account.
+  nature: primary
+  
+removed_banner:
+  id: 4
+  name: Removed Banner User
+  description: Removed user account from Banner.
+  nature: closing
+  
+removed_listserv:
+  id: 5
+  name: Removed Banner LISTSERV
+  description: Removed user from Banner email LISTSERV.
+  nature: closing
+
+modify_account:
+  id: 6
+  name: Modify Account
+  description: Modify a Banner account for a user.
+  nature: primary
+  

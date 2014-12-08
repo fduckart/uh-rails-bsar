@@ -1,0 +1,21 @@
+Please <%= @ticket.task.description %>
+
+Admissions and Records User Information:  
+  UH Username: <%= @user.uid %>
+  Full Name: <%= @user.display_name %>
+  Email: <%= @user.email -%>
+  <% if ! @ticket.copy_username.nil? && @ticket.copy_username != '' %>
+  Copy permissions from UH username: <%= @ticket.copy_username %> 
+  <% end %>
+  
+General Comments:
+  <%= @ticket.description -%>
+<% if @ticket.permissions %>
+Permission Comments:
+  <%= @ticket.permissions -%>
+<% end -%>
+
+Ticket URI:
+  <%= ENV['BAS_URL'] %>/ticket/edit/<%= @ticket.id %>
+
+Thank you!

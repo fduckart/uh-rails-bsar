@@ -1,0 +1,1 @@
+class Requestor < Role ; end

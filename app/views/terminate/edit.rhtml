@@ -1,0 +1,47 @@
+<div class="terminate-form">
+  <fieldset>
+    <legend><%= @edit_ticket.state != 'complete' ? 'Edit' : 'View' %> Request to Terminate Banner Access</legend>
+
+    <% form_for :edit_ticket, :url => {:action => :edit, :id => @edit_ticket.id}  do |form| %>
+      <%= error_messages_for :edit_ticket %>
+    
+      <table cellpadding="2" cellspacing="2" border="0">
+        <tr class="username-row">
+          <td><label for="username">UH Username to terminate:</label></td>
+          <td><%= @edit_ticket.username %></td>
+        </tr>
+        
+        <tr>
+          <td><label for="tasks_complete">Completed tasks:</label></td>
+          <td>
+            <%= form.radio_button(:close_task_id, 4) %>Removed from Banner&nbsp;
+            <%= form.radio_button(:close_task_id, 5) %>Disabled in Banner<br/>
+            <%= form.check_box(:is_listserv_done) %>Removed from LISTSERV<br/>
+          </td>
+        </tr>
+         
+        <tr class="comments-row">
+          <td><label for="comments">Comments:</label></td>
+          <td><%= form.text_area(:description, :rows => 6) %></td>
+        </tr>
+
+       
+        
+        <% if @edit_ticket.state != 'complete' %>
+         <tr>
+          <td colspan="2"><hr/></td>
+        </tr>
+        <tr class="submit-row">
+          <td align="left">
+            <%= link_to 'Cancel', :action => 'open' %>
+          </td>
+          <td align="right">
+            <%= submit_tag "Save without Closing Request", :class => 'submit', :name => 'save' %> &nbsp;&nbsp;
+            <%= submit_tag "Close Request and Notify Registar", :class => 'submit', :name => 'commit' %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <% end %>
+  </fieldset>
+</div>

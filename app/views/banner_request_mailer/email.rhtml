@@ -1,0 +1,6 @@
+<% if @ticket.state == 'complete' %>
+	<%= render :partial => 'complete', :locals => { :ticket => @ticket, :user => @user } %>
+<% end %>
+<% if @ticket.state == 'open' %>
+	<%= render :partial => 'new', :locals => { :ticket => @ticket, :user => @user } %>
+<% end %>

@@ -1,0 +1,44 @@
+<% if @open_tickets.size > 0 %>
+  <div id="ticket-list">
+    <fieldset>
+      <legend>Open Requests</legend>
+    
+      <table cellpadding="5" cellspacing="0" border="1" width="100%">
+        <tr>
+          <th>Type</th>
+          <th>State</th>
+          <th>User</th>
+          <th>Requestor</th>
+          <th>Description</th>
+          <th>Request&nbsp;ID</th>
+          <th>&nbsp;</th>
+        </tr>
+      
+        <% for t in @open_tickets %>
+          <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+            <td nowrap><%= t.task.name %></td>
+            <td><span class="list-state"><%= h(t.state) %></span></td>
+            <td>&nbsp;<%= t.username %></td>
+            <td><%= h(truncate(t.requestor_username, 80)) %></td>
+            <td width="50%"><%= h(truncate(t.description, 80)) %></td>
+            <td><%= h(t.id) %></td>
+            <td class="list-actions">
+              <%= 
+                terminate_task_id = 2
+                if (t.task.id == terminate_task_id)
+                  to = 'terminate'
+                else
+                  to = 'ticket'
+                end
+  
+                link_to('Edit', :controller => to, :action => 'edit', :id => t) 
+              %>
+              <br/>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </fieldset>
+  </div>
+<% end %>
+

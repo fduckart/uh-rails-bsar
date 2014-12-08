@@ -1,0 +1,36 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+user:
+  id: 1
+  type: Bannerite
+  name: banner_user
+  rank: 10
+  is_system_role: false
+
+requestor:
+  id: 2
+  type: Requestor
+  name: requestor
+  rank: 20
+  is_system_role: true
+  
+coodinator:
+  id: 3
+  type: Coordinator
+  name: coordinator
+  rank: 30
+  is_system_role: true
+
+approver:
+  id: 4
+  type: Approver
+  name: approver
+  rank: 40
+  is_system_role: true
+
+manager:
+  id: 5
+  type: Manager
+  name: manager
+  rank: 50  
+  is_system_role: true

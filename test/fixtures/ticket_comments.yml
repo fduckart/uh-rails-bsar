@@ -1,0 +1,50 @@
+one_one:
+  id: 1
+  ticket_id: 1
+  user_id: 3
+  user_role_id: 2
+  date: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  comment: The One and Only
+
+two_one:
+  id: 2
+  ticket_id: 1
+  user_id: 3
+  user_role_id: 2
+  date: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  comment: We belong as two together
+
+three_one:
+  id: 3
+  ticket_id: 1
+  user_id: 3
+  user_role_id: 2
+  date: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  comment: Three's A Crowd
+
+four_two:
+  id: 4
+  ticket_id: 2
+  user_id: 3
+  user_role_id: 2
+  date: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  comment: Four in a Row
+
+five_two:
+  id: 5
+  ticket_id: 2
+  user_id: 3
+  user_role_id: 2
+  date: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  comment: Five minus three Equals a Number
+
+six_one:
+  id: 6
+  ticket_id: 1
+  user_id: 3
+  user_role_id: 2
+  date: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  comment: The Sixth Sense
+
+
+

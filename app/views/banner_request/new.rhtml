@@ -1,0 +1,39 @@
+
+
+<div class="app-list">
+  <fieldset>
+    <legend>Enter Banner Request</legend>
+    
+    <% form_for :new_ticket, :url => { :action => :new } do |form| %>
+      <%= error_messages_for :new_request %> 
+      <table border="0">
+        <tr>
+          <td>UH Username:</td>
+          <td><%= form.text_field :username, :size => 40 %></td>
+        </tr>
+        <tr>
+          <td valign="top">Type:</td>
+          <td>
+            <p>
+              <%= form.radio_button(:task_id, '1', :checked => true) %> Create New Account <br />
+              <%= form.radio_button(:task_id, '6') %> Modify Permissions <br />
+              <%= form.radio_button(:task_id, '3') %> Reset Password <br />
+              <%= form.radio_button(:task_id, '2') %> Terminate Account <br />
+            </p>            
+          </td>
+        </tr>  
+        <tr>
+          <td colspan="2"><hr/><br/></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center"><%= submit_tag "Continue", :class => "submit" %></td>
+        </tr>
+        <tr>
+          <td colspan="2"><hr/></td>
+        </tr>
+        
+      </table>
+              
+    <% end %>
+  </fieldset>
+</div>

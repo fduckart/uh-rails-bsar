@@ -1,0 +1,19 @@
+<h1>Administrators (via admin)</h1>
+<ul>
+  <% prompt = "Are you sure you want to delete" %>
+  <% for user in @all_users %>
+    <li>
+      <%= link_to "[X]", { # link_to options
+                           :controller => 'login',
+                           :action => 'delete_user',
+                           :id => user
+                         },
+                         { # html options
+                           :method => :post,
+                           :confirm => prompt + " '#{user.username}'?"
+                         } %>
+        <%= h(user.username) %>
+    </li>
+  <% end %>
+</ul>
+                       

@@ -1,0 +1,15 @@
+separated:
+  id: 1 
+  description: Separation from UH.
+
+transfer_another:
+  id: 2
+  description: Transferred to Another Campus.
+  
+transfer_within:
+  id: 3
+  description: Transferred within UHM.
+  
+reassigned:
+  id: 4
+  description: Re-assigned within Department.

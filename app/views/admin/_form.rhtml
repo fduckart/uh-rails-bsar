@@ -1,0 +1,15 @@
+<%= error_messages_for 'ticket' %>
+
+<!--[form:ticket]-->
+<p><label for="ticket_state">State</label><br/>
+<%= text_field 'ticket', 'state'  %></p>
+
+<p><label for="ticket_description">Description</label><br/>
+<%= text_field 'ticket', 'description'  %></p>
+
+<p><label for="ticket_date">Date</label><br/>
+<%= datetime_select 'ticket', 'date'  %></p>
+
+<p><label for="ticket_last_action">Last action</label><br/>
+<%= text_field 'ticket', 'last_action'  %></p>
+<!--[eoform:ticket]-->

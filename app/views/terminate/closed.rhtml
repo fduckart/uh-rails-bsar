@@ -1,0 +1,25 @@
+<% if @closed_tickets.size > 0 %>
+  <div id="ticket-list">
+    <fieldset>
+      <legend>Closed Requests</legend>
+      <table cellpadding="2" cellspacing="0" border="1">
+        <tr>
+          <th>Month Year</th>
+          <th>&nbsp;New&nbsp;</th>
+          <th>Modify&nbsp;</th>
+          <th>Termination</th>
+        </tr>
+        
+        <% for t in @closed_tickets %>
+          <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+            <td><%= h(t.month_year) %></td>
+            <td align="center"><%= t.new_requests %></td>
+            <td align="center"><%= t.modify_requests %></td>
+            <td align="center"><%= t.terminate_requests %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+<% end %>
+

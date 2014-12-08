@@ -1,0 +1,1 @@
+class Administrator < Role ; end

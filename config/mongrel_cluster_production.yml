@@ -1,0 +1,8 @@
+--- 
+cwd: /var/home/duckart/bars4uh/current
+log_file: log/mongrel.log
+port: "3000"
+environment: production
+address: its10.pvt.hawaii.edu
+pid_file: /var/home/duckart/bars4uh/current/tmp/pids
+servers: 1

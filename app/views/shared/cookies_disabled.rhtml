@@ -1,0 +1,37 @@
+<% if flash[:notice] -%>
+  <div id="notice">
+    <center>
+  	<table>
+    	<tr>
+    		<td colspan="2" align ="center">
+    			<br />
+    			Your browser's cookie functionality is turned off.
+    			<br />
+    			You must enable cookies in your browser prior to using this application. 
+    			<br /><br />
+    		</td>
+    	</tr> 
+     	<tr>
+     		<td colspan="2">
+     			System Requirements for the BSAR Administration application:
+     		</td>
+     	</tr>
+     	<tr>
+     		<td width="10%">
+     		</td>
+     		<td align="left">
+     			<li>cookies and javascripts enabled in the browser
+     		    <li>connection to the UH network 
+      		</td>
+      	</tr>
+      	<tr>
+      		<td align="center" colspan ="2">
+        		<br /> <br />
+      			<%= link_to "Login", :controller => 'login' %>
+      			<br />
+      		</td>
+      	</tr>
+      </table>
+      </center>
+  	</div>
+<% end -%>

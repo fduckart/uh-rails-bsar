@@ -1,0 +1,27 @@
+approve:
+  id: 1
+  description: Approve
+  
+cancel:
+  id: 2
+  description: Cancel
+
+create:
+  id: 3
+  description: Create
+
+deny:
+  id: 4
+  description: Deny
+
+delete:
+  id: 5
+  description: Delete
+
+modify:
+  id: 6
+  description: Modify
+
+none:
+  id: 7
+  description: none

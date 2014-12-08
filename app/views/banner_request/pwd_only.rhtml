@@ -1,0 +1,35 @@
+<div class="app-list">
+  <fieldset>
+    <legend>Reset Banner Password</legend>
+    
+    <% form_for :new_ticket, :url => { :action => :pwd_only } do |form| %>
+    <%= error_messages_for :new_request %>
+      <table border="0">
+        <tr>
+          <td>UH Username:</td>
+          <td>
+          	<%= @user.username %>
+          	<%= form.hidden_field :username, :value => @user.username%> 
+          </td>
+        </tr>
+        
+     	<tr class="comments-row">
+    		<td valign="top" width="30%">
+    			<label for="comments">General Comments:</label>
+    		</td>
+        	<td>
+        		<%= form.text_area(:description, :rows => 6) %>
+        	</td>
+     	</tr>
+     	<tr class="submit-row">
+        	<td colspan="2" align="center" nowrap>
+        		<br />
+        		<%= submit_tag "Submit", :class => 'submit', :name => 'save' %> &nbsp;&nbsp;
+            	<%= submit_tag "Cancel", :class => 'submit', :name => 'cancel' %>
+            	<br /> <br />
+        	</td>
+     	</tr>
+	  </table>
+	<% end %>
+  </fieldset>
+</div>

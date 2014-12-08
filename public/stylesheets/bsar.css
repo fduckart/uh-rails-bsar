@@ -1,0 +1,179 @@
+/* Global styles */
+th { 
+  text-align: left; 
+  font-weight: normal; 
+}
+
+/* START:notice */
+#notice {
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold 100% sans-serif;
+}
+/* END:notice */
+
+#campusBoxes .mybg {
+  background:   #e0f8f8;
+}
+
+#campusBoxes td {
+  white-space:     nowrap;
+  padding-right:   10px;
+}
+
+/* Styles for admin/list */
+
+#ticket-list .list-title {
+  color:        #244;
+  font-weight:  bold;
+  font-size:    larger;
+}
+
+#ticket-list .list-image {
+  width:        60px;
+  height:       70px;
+}
+
+#ticket-list .list-actions {
+  font-size:    x-small;
+  text-align:   center;
+  padding-left: 1em;
+}
+
+#ticket-list .list-line-even {
+  background:   #f0f8f8;
+}
+
+#ticket-list .list-line-odd {
+  background:   #e0f8f8;
+}
+
+#ticket-list h2 {
+  font:  125% sans-serif;
+  color: #226;
+  border-bottom: 3px dotted #77d;
+}
+
+/* Styles for main page */
+
+#banner {
+  background: #9c9;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 36px/36px Arial, Helvetica, sans-serif;
+  color: #282;
+  text-align: left;
+}
+
+#banner img {
+  float: left;
+}
+
+#main {
+  margin-left: 17em;
+  padding-top: 1ex;
+  padding-left: 2em;
+  background: white;
+}
+
+#side {
+  float: left;
+  padding-left: 0.5em;
+  padding-bottom: 1em;
+  width: 18em;
+  background: #141;
+}
+
+#side a {
+  color: #bfb;
+  font-size: small;
+  font-weight: normal;
+}
+
+h1 {
+  font:  150% sans-serif;
+  color: #226;
+  border-bottom: 3px dotted #77d;
+}
+
+.app-form fieldset {
+  background: #efe;
+}
+
+.app-form legend {
+  color: #dfd;
+  background: #141;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+.app-form label {
+  width: 5em;
+  float: left;
+  text-align: right;
+  margin-right: 0.5em;
+  display: block;
+}
+
+.app-form .submit {
+  margin-left: 5.5em;
+}
+
+.app-lookup-form .submit {
+  margin-left: 50.5em;
+  font-weight: bold;  
+}
+
+.terminate-form td {
+  vertical-align: top;
+}
+
+/* The error box */
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+#no-cookie {
+  margin-left: 10em;
+  margin-right: 10em;
+  padding-top: 5ex;
+  padding-left: 2em;
+  background: white;
+}

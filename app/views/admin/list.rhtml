@@ -1,0 +1,31 @@
+<div id="ticket-list">
+  <h1>Request Listing</h1>
+  
+  <table cellpadding="5" cellspacing="0" border="0">
+    <% for ticket in @tickets %>
+      <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+        <td>
+          <span class="list-state"><%= h(ticket.state) %></span><br/>
+        </td>
+        <td width="70%">
+            <%= h(truncate(ticket.description, 80)) %>
+        </td>
+        <td class="list-actions" width="20%">
+          <%= link_to 'Show', :action => 'show', :id => ticket %><br/>
+          <%= link_to 'Edit', :action => 'edit', :id => ticket %><br/>
+          <%= link_to 'Delete', { :action  => 'destroy', 
+                                  :id => ticket,
+                                },
+                                :confirm => "Are you sure?",
+                                :method  => :post
+                            %><br/>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<br />
+
+<%= link_to 'New Request', :action => 'new' %>
+

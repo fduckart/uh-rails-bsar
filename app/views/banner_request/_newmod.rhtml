@@ -1,0 +1,59 @@
+<table cellpadding="2" cellspacing="2" border="0" width="80%">
+	<tr>
+    	<td colspan="2">
+    		Copy another user's permissions</td>
+   	</tr>
+    <tr>
+    	<td>
+    		UH Username:
+    	</td>
+        <td valign="bottom"><%= form.text_field :copy_username, :size => 40 %></td>
+   	</tr>
+	<tr class="permissions-row">
+    	<td valign="top" width="40%">
+        	<label for="permissions">Permission Comments:</label><br/>(Classes/Forms)
+        </td>
+        <td>
+        	<%= form.text_area(:permissions, :rows => 4) %>
+      	</td>
+	</tr>
+    <tr>
+    	<td colspan="2"><hr/></td>
+   	</tr>
+    <tr> 
+   		<td valign="top">
+        	Campuses:
+        </td>                     
+        <td width="100">              
+        	<table border="0">              
+            	<div id="campusBoxes">
+                	<%
+                  		max_per_row  = 3
+                  		campus_count = @campuses.size
+                  		i = 0 
+                  		while (i < campus_count) 
+                    	j = 1
+                    %>
+                    <tr>
+                    	<%
+                    		while ((j <= max_per_row) && (i < campus_count))
+                      		campus = @campuses[i]
+                     	%>
+                     		<td nowrap>
+                     			<%= check_box_tag "edit_ticket[add_campus_ids][]", campus.id, @edit_ticket.has_campus?(campus), :id => "campus_#{campus.id}".downcase -%>&nbsp;<label for="<%= "campus_#{campus.id}".downcase %>"><%= campus.description %></label>&nbsp;&nbsp;&nbsp</td> <%
+                      				i += 1
+                      				j += 1
+                    			end %>
+                   	</tr>
+                   	<% end	%>
+              	</div>
+            </table>
+      	</td>
+	</tr>
+
+    <tr>
+    	<td colspan="2">
+        	<hr/>
+       	</td>
+ 	</tr>
+ </table>

@@ -1,0 +1,21 @@
+Please terminate Banner access for the following Admissions and Records user:
+ 
+  
+UH Username: <%= @user.uid %>
+Full Name: <%= @user.display_name %>
+Email: <%= @user.email %>
+
+
+<% if @ticket.reason -%>
+Reason:
+  <%= Reason.find(@ticket.reason).description %>
+<% end -%>
+
+Comments:
+  <%= @ticket.description %>
+
+Ticket URI:
+  <%= ENV['BAS_URL'] %>/terminate/edit/<%= @ticket.id %>
+
+
+Thank you!

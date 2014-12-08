@@ -1,0 +1,9 @@
+query:
+  id: 1
+  code: Q
+  description: Query
+  
+modify:
+  id: 2
+  code: M
+  description: Modify

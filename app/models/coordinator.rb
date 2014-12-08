@@ -1,0 +1,1 @@
+class Coordinator < Role ; end

@@ -1,0 +1,147 @@
+# This file contains the initial user load data.
+# All usernames in this file should be value UH user names.
+
+amek:
+  id: 13
+  username: amek
+  role_id: 5
+  
+duckart:
+  id: 7
+  username: duckart
+  role_id: 5
+
+jaimeyh:
+  id: 8
+  username: jaimeyh
+  role_id: 2
+
+kimotor:
+  id: 10
+  username: kimotor
+  role_id: 4
+
+dykstra:
+  id: 11
+  username: dykstra
+  role_id: 3
+
+noreeny:
+  id: 12
+  username: noreeny
+  role_id: 3
+
+skama:
+  id: 20
+  username: skama
+  role_id: 3
+
+jeancruz:
+  id: 21
+  username: jeancruz 
+  role_id: 3
+  
+zenz:
+  id: 22
+  username: zenz
+  role_id: 3
+
+matull:
+  id: 23
+  username: matull 
+  role_id: 3
+
+wtatsuta: 
+  id: 24
+  username: wtatsuta 
+  role_id: 3
+
+matsuis: 
+  id: 25
+  username: matsuis 
+  role_id: 3
+
+monal:
+  id: 26
+  username: monal
+  role_id: 3
+
+earln: 
+  id: 27
+  username: earln 
+  role_id: 3
+
+echu:
+  id: 28
+  username: echu
+  role_id: 3
+
+shoshino: 
+  id: 29
+  username: shoshino 
+  role_id: 3
+
+stuartl:
+  id: 30
+  username: stuartl 
+  role_id: 3
+
+lorchin: 
+  id: 31
+  username: lorchin 
+  role_id: 3
+
+atag:
+  id: 32
+  username: atag
+  role_id: 3
+
+lhokoana:
+  id: 33
+  username: lhokoana 
+  role_id: 3
+
+susansyn: 
+  id: 34
+  username: susansyn 
+  role_id: 3
+
+tota:
+  id: 35
+  username: tota
+  role_id: 3
+
+denoki:
+  id: 36
+  username: denoki
+  role_id: 5
+
+sandrawo:
+  id: 37
+  username: sandrawo
+  role_id: 5
+
+anicasm:
+  id: 40
+  username: anicasm
+  role_id: 5
+  
+mtome:
+  id: 41
+  username: mtome
+  role_id: 4
+
+hmiyasak:
+  id: 42
+  username: hmiyasak
+  role_id: 4
+  
+mylesi:
+  id: 43
+  username: mylesi
+  role_id: 5
+  
+wching:
+  id: 44
+  username: wching
+  role_id: 5

@@ -1,0 +1,56 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+administrator:
+  id: 1
+  username: user_one
+  role_id: 5
+
+banner_user:
+  id: 2
+  username: user_banner_user
+  role_id: 1
+
+requestor:
+  id: 3
+  username: user_requestor
+  role_id: 2
+
+coordinator:
+  id: 4
+  username: user_coordinator
+  role_id: 3
+
+approver:
+  id: 5
+  username: user_approver
+  role_id: 4
+
+manager:
+  id: 6
+  username: user_manager
+  role_id: 5
+
+duckart:
+  id: 7
+  username: duckart
+  role_id: 5
+
+jaimeyh:
+  id: 8
+  username: jaimeyh
+  role_id: 2
+
+terminator:
+  id: 9
+  username: terminator
+  role_id: 4
+
+kimotor:
+  id: 10
+  username: kimotor
+  role_id: 4
+
+amek:
+  id: 13
+  username: amek
+  role_id: 5

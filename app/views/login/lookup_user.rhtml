@@ -1,0 +1,63 @@
+<div class="app-lookup-form">
+  
+  <% if @cas_user %>
+    <fieldset>
+      <legend>User Lookup Results</legend>
+        <table cellpadding="0" cellspacing="2" border="0">
+          <tr>
+            <td><label for="user_uid">Username:</label></td>
+            <td><%= @cas_user.uid %>
+          </tr>
+          <tr>
+            <td><label for="user_uhuuid">User ID:</label></td>
+            <td><%= @cas_user.uhuuid %></td>
+          </tr>
+          <tr>
+            <td><label for="user_name">First Name:</label>&nbsp;&nbsp;</td>
+            <td><%= @cas_user.firstname %></td>
+          </tr>
+          <tr>
+            <td><label for="user_lastname">Last Name:</label></td>
+            <td><%= @cas_user.lastname %></td>
+          </tr>
+          <tr>
+            <td><label for="user_email">Email:</label></td>
+            <td><%= @cas_user.email %></td>
+          </tr>
+          <tr>
+            <td><label for="user_phone">Phone:</label></td>
+            <td><%= @cas_user.phone %></td>
+          </tr>
+          <tr>
+            <td><label for="user_title">Title:</label></td>
+            <td><%= @cas_user.title %></td>
+          </tr>      
+          <tr>
+            <td><label for="user_department">Department:</label></td>
+            <td><%= @cas_user.department %></td>
+          </tr>      
+          <tr>
+            <td><label for="user_system">Campus Affiliation:</label></td>
+            <td><%= @cas_user.system %></td>
+          </tr>      
+        </table>
+    </fieldset>
+  <% end %>
+
+  <fieldset>
+    <legend>User Lookup</legend>
+    <% form_tag do %>
+      <p>
+        <%= radio_button_tag :type, :uid, checked = true %> Username
+        <%= radio_button_tag :type, :uhuuid %> ID
+      </p>
+      <p>
+        <%= text_field_tag :value, params[:value], "maxlength" => 20 %>
+      </p>
+      <p>
+        <%= submit_tag "Lookup" %>
+      </p>
+    <% end %>
+  </fieldset>
+</div>
+

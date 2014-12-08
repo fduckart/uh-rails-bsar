@@ -1,0 +1,24 @@
+<%= error_messages_for 'user' %>
+<% if @user %>
+  <fieldset>
+    <legend>Current User</legend>
+    <table cellpadding="0" cellspacing="3" border="0">
+      <tr>
+        <td><label for="user_uid">Username:</label>&nbsp;&nbsp;</td>
+        <td><%= @user.username %>
+      </tr>
+      <tr>
+        <td><label for="user_role">Role:</label></td>
+        <td><%= @user.role.name.capitalize.gsub(/_/, ' ') %></td>
+      </tr>
+    </table>
+    <br/><br/>
+    Click 
+    <%= link_to "here", :controller => 'login', :action => 'logout'%> 
+    to logout from this user session.
+  </fieldset>
+<% else %>
+  Click <%= link_to "here", :controller => 'login', :action => 'login_user' %>
+  to login securely.
+<% end %>
+

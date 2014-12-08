@@ -1,0 +1,32 @@
+  <%= error_messages_for 'user' %>
+  
+  <fieldset>
+    <legend>Enter New BSAR Administrator</legend><br/>
+    
+    <% form_for :user do |form| %>
+      <table cellpadding="2" cellspacing="2" border="0">
+        <tr>
+          <td>
+            <label for="user_name">UH Username:</label>
+          </td>
+          <td>
+            <%= form.text_field :username, :size => 20, :value => '' %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="role">Role:</label>
+          </td>
+          <td>
+            <%=  form.select(:role_id, @system_roles) %>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="right">
+            <%= submit_tag "Add User", :class => "submit" %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  </fieldset>
+

@@ -1,0 +1,66 @@
+<%
+  def space_to_nbsp(string)
+    begin
+      result = string.gsub(' ', '&nbsp;')
+    rescue Exception
+      result = ''
+    ensure
+      if (result.nil?)
+        result = ''
+      end
+    end
+    return result
+  end
+%>
+
+<fieldset>
+  <legend>User Account Activity Search</legend>
+  <% form_tag do %>
+    <p>
+      UH&nbsp;Username&nbsp;&nbsp;
+			<%= text_field_tag :value, params[:value], "maxlength" => 20 %>&nbsp;&nbsp;
+      <%= submit_tag "Search" %>
+    </p>
+  <% end %>
+</fieldset>
+
+<% if (@performed_search) %>
+  <fieldset>
+    <legend>User Account Activity Results</legend>
+
+		<% if (!@has_search_results) %>
+		  No tracking activity found.
+		<% else %>
+		  <div id="ticket-list">
+		    <table cellpadding="5" cellspacing="0" border="1">
+		      <tr>
+		        <th>State</th>
+		        <th>Task</th>
+		        <th>User</th>
+		        <th>Requestor</th>
+		        <th>Description</th>
+		        <th>Request&nbsp;ID</th>
+		        <th>Date</th>
+			<th></th>
+		     </tr>
+		      <% for t in @search_tickets %>
+		        <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+		          <td><span class="list-state"><%= h(t.state) %></span></td>
+							<td><%= space_to_nbsp(t.task.name) %></td>
+		          <td>&nbsp;<%= t.username %></td>
+		          <td><%= h(truncate(t.requestor_username, 80)) %></td>
+		          <td width="40%"><%= h(truncate(t.description, 80)) %></td>
+		          <td><%= h(t.id) %></td>
+							<td><%= t.date.strftime('%m/%d/%Y') if t.date %></td>
+<td class="list-actions">
+<% t.state=='complete' ? @where = 'View' : @where = 'Edit' %>
+<% t.task_id == 2 ? @to = 'terminate' : @to = 'ticket' %>
+<%= link_to @where, :controller => @to, :action => 'edit', :id => t %><br/>
+</td>
+		        </tr>
+		      <% end %>
+		    </table>
+		  </div>
+		<% end %>
+  </fieldset>
+<% end %>	

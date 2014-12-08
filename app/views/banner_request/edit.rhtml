@@ -1,0 +1,105 @@
+<div class="ticket-form">
+<fieldset>
+<legend>
+<%='Enter' if @edit_ticket.state == 'none' %>
+<%= 'Edit' if @edit_ticket.state == 'open' %>
+<%= 'View' if @edit_ticket.state == 'complete' %>
+
+<%= @edit_ticket.task.name if @edit_ticket.task %> Request</legend>
+
+<% form_for :edit_ticket, :url => {:action => :edit, :id => @edit_ticket.id}, :html => {:name => "edit_form"} do |form| %>
+<%= error_messages_for :edit_ticket %>
+    
+<table cellpadding="2" cellspacing="2" border="0" width="80%">
+	<tr class="username-row">
+    	<td width="40%" valign="top" >
+    		UH Username:</td>
+        <td>
+          	<%= @edit_ticket.username %><br />
+          	<%= @person.display_name %>  - 
+         	<%= @person.email %>
+        </td>
+  	</tr>
+    <tr class="requesttype-row">
+    	<td>
+    		<label for="requesttype">Request Type:</label>
+    	</td>
+        <td>
+        	<%= @edit_ticket.task.name if @edit_ticket.task %>
+       	</td>
+ 	</tr>
+ 	<tr>
+    	<td colspan="2">
+    		<hr/>
+    	</td>
+   	</tr>
+</table>
+       
+
+<!-- terminate type ticket - replace this section with a partial -->        
+<% if @edit_ticket.task_id == 2 %>
+	<%= render :partial => 'terminate', :locals => { :form => form } %>
+<% end %>
+        
+      
+<!-- new/modified type ticket - replace this section with a partial -->            
+<% if @edit_ticket.task_id == 6 or @edit_ticket.task_id ==1 %>
+	<%= render :partial => 'newmod',  :locals => { :form => form } %>
+<% end %>
+ 
+<!-- pwdreset type ticket - replace this section with a partial -->            
+<% if @edit_ticket.task_id == 3 %>
+	<%= render :partial => 'pwdreset', :locals => { :form => form } %>
+<% end %>
+ 
+<! -- common fields  -->       
+<table cellpadding="2" cellspacing="2" border="0" width="80%">
+	<tr class="comments-row">
+    	<td valign="top" width="40%">
+    		<label for="comments">General Comments:</label>
+    	</td>
+        <td>
+        	<%= form.text_area(:description, :rows => 6) %>
+        </td>
+</tr>
+</table>
+
+<!-- only show save and completed buttons for tickets that are not closed -->        
+<% if @edit_ticket.state != 'complete' %>
+<table cellpadding="2" cellspacing="2" border="0" width="80%">
+	 <tr>
+    	<td>
+    		<hr/>
+    	</td>
+   	</tr>
+   	
+	<tr class="submit-row">
+    	
+        <td align="center" nowrap>
+        	<br />
+        	<!-- include a plain 'Save' button if the request isn't new -->
+        	<% if @edit_ticket.state == 'none' %>
+        		<%= submit_tag "Save", :class => 'submit', :name => 'save' %> &nbsp;&nbsp;
+            <% end %>
+            
+            <!-- include both 'Save' and 'Close' if request isn't new -->
+        	<% if @edit_ticket.state == 'open' %>
+        		<%= submit_tag "Save without Closing", :class => 'submit', :name => 'save' %> &nbsp;&nbsp;
+            	<%= submit_tag "Close and Notify Requestor", :class => 'submit', :name => 'commit' %> &nbsp;&nbsp;
+            <% end %>
+            <%= submit_tag "Cancel", :class => 'submit', :name => 'cancel' %>
+            <br /> <br />
+         </td>
+         <tr>
+    	<td>
+    		<hr/>
+    	</td>
+   	</tr>
+	</tr>
+</table>
+<% end %>
+    
+     
+<% end %>  <!-- end of form-for loop -->
+</fieldset>
+</div>

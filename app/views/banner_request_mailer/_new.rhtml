@@ -1,0 +1,33 @@
+
+Please <%= ticket.task.description %>
+
+<% if ticket.task_id == 1 || ticket.task_id == 6 %>
+Admissions and Records User Information: 
+<% end %>
+ 
+  UH Username: <%= user.uid %>
+  Full Name: <%= @user.display_name %>
+  Email: <%= @user.email -%>
+
+<% if ! @ticket.copy_username.nil? && @ticket.copy_username != '' %>
+  Copy permissions from UH username: <%= @ticket.copy_username %> 
+<% end %>
+  
+General Comments:
+  <%= @ticket.description -%>
+
+<% if @ticket.permissions %>
+Permission Comments:
+  <%= @ticket.permissions -%>
+<% end -%>
+
+<% if @ticket.reason -%>
+Reason:
+  <%= Reason.find(@ticket.reason).description %>
+<% end -%>
+
+
+Ticket URI:
+  <%= ENV['BAS_URL'] %>/banner_request/edit/<%= @ticket.id %>
+
+Thank you!

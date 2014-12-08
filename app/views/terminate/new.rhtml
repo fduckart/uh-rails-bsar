@@ -1,0 +1,49 @@
+<div class="terminate-form">
+  <fieldset>
+    <legend>Request to Terminate Banner Access</legend>
+    
+    <% form_for :new_ticket, :url => {:action => :new}  do |form| %>
+      <%= error_messages_for :new_ticket %>
+    
+      <table cellpadding="2" cellspacing="2" border="0">
+        <tr>
+          <td><label for="username">UH Username to terminate:</label></td>
+          <td><%= form.text_field(:username, :size => 20) %></td>
+        </tr>
+        
+        <tr>
+          <td><label for="reason">Reason to terminate access:</label></td>
+          <td>
+            <%= form.radio_button(:reason, 1) %> Separation from UH <br/>
+            <%= form.radio_button(:reason, 2) %> Transferred to Another Campus <br/>
+            <%= form.radio_button(:reason, 3) %> Transferred within UHM <br/>
+            <%= form.radio_button(:reason, 4) %> Re-assigned within Department 
+          </td>
+        </tr>
+        
+        <tr>
+          <td><label for="effective_date">Effective date:</label></td>
+          <td><%= form.date_select(:date, :order => [:day, :month, :year]) %></td>
+        </tr>
+         
+        <tr>
+          <td><label for="comments">Comments:</label></td>
+          <td><%= form.text_area(:description, :rows => 4) %></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><hr/></td>
+        </tr>
+        
+        <tr>
+          <td colspan="2" align="right">
+            <%= form.hidden_field(:state, :value => 'open') %>            
+            <%= submit_tag "Submit and Notify Banner ID Managment", :class => 'submit' %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  </fieldset>
+
+</div>
+

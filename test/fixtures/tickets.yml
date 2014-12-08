@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  username: jaimeyh
+  requestor_username: duckart
+  task_id: 1
+  state: open
+  date: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  description: The One and Only
+
+two:
+  id: 2
+  username: jgeiss
+  requestor_username: duckart
+  task_id: 1
+  state: open
+  date: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  description: We belong as two together
+
+three:
+  id: 3
+  username: cahana
+  requestor_username: duckart
+  task_id: 2
+  state: open
+  date: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
+  description: Remove me!
+  reason: 2
+ 

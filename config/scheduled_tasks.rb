@@ -1,0 +1,1 @@
+NotificationsHelper::Notifier.start

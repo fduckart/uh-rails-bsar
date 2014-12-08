@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Administer BSAR</title>
+    <%= stylesheet_link_tag 'scaffold', 'bsar', :media => "all" %>
+  </head>
+  <body id="admin">
+    <div id="banner">
+      <%= @page_title || "BSAR Administration" %>
+    </div>
+    
+   
+    <div id="side">        
+      <p>
+        <%= link_to "Home", :controller => 'login', :action => 'index' %><br/>
+      </p>
+      
+      <% if @user %>
+        <% if @user.is_system_user? %>
+          <p>
+            <%= link_to "Create&nbsp;New&nbsp;Account&nbsp;Request",  :controller => 'ticket',    :action => 'new' %><br/>
+            <%= link_to "Create&nbsp;Termination&nbsp;Request",     :controller => 'terminate', :action => 'new' %><br/><br/>
+            
+            <%= link_to "View&nbsp;Open&nbsp;Requests", :controller => 'ticket',    :action => 'open' %> <br/>
+            <%= link_to "Search&nbsp;Requests",                   :controller => 'terminate', :action => 'search' %><br/><br/>
+            
+            <%= link_to "Request&nbsp;Statistics",                :controller => 'terminate', :action => 'closed' %>&nbsp;<br/><br/>
+            <%= link_to "List users",  :controller => 'login',     :action => 'list_users' %> <br/>
+            <%= link_to "Add user",    :controller => 'login',     :action => 'add_user' %> <br/>
+            <%= link_to "Lookup user", :controller => 'login',     :action => 'lookup_user' %><br/>
+          </p>
+        <% end %>
+      <% end %>        
+      
+      <% if (@is_cas_logged_in) %>
+        <p>
+          <%= link_to "Logout",     :controller => 'login', :action => 'logout' %>
+        </p>          
+      <% else %>
+        <p>
+          <%= link_to "Login securely", :controller => 'login', :action => 'login_user' %>
+        </p>
+      <% end %>
+
+    </div>
+   
+    <div id="main">
+      <% if flash[:notice] -%>
+        <div id="notice"><%= flash[:notice] %></div>
+      <% end -%>
+      <%= yield :layout %>
+    </div>
+        
+  </body>
+</html>
