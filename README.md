@@ -10,6 +10,9 @@ Capistrano, version 2.5.8
 CAS library (rubycas-client), version 2.0.1
 LDAP library (ruby-net-ldap), version 0.0.4
 
+####Operating System Environments
+The BSAR application was initially developed and tested on Mac OS X and Microsoft Vista.
+
 ####Rails gem Installations
 
 ######MySQL
@@ -95,9 +98,6 @@ In the event that the system is unresponsive or not accessible for any reason, t
 
 ######2. Run restart
     $ cap production deploy:restart
-
-#####Operating System Environments
-The BSAR application was initially developed and tested on Mac OS X and Microsoft Vista.
 
 #####Important Note
 
